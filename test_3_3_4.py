@@ -21,13 +21,9 @@ def test_3_3_4():
     driver.maximize_window()
     driver.save_screenshot(path + "/picture2.png")
     driver.switch_to.frame("iframeResult")
-    onclick_button = driver.find_element_by_css_selector('[onclick*="myFunction()"]')
-    onclick_button.click()
-    time.sleep(2)
-    #It is not possible to take screenshot with the alert box using selenium
+    driver.find_element_by_css_selector('[onclick*="myFunction()"]')
+    # It is not possible to take screenshot with the alert box using selenium
     # driver.save_screenshot(path + "/picture3.png")
-    alert = driver.switch_to.alert
-    alert.accept()
     driver.save_screenshot(path + "/picture4.png")
     driver.switch_to.default_content()
     driver.save_screenshot(path + "/picture5.png")
